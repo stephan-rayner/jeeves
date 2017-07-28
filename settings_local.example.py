@@ -1,4 +1,4 @@
-import pepper_plugins
+import router
 WUNDERGROUND_TOKEN = ""
 SLACKBOT_API_TOKEN = ""
-SLACKBOT_PLUGINS = pepper_plugins.LIST_OF_PLUGINS
+SLACKBOT_PLUGINS = router.LIST_OF_PLUGINS
