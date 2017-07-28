@@ -1,0 +1,6 @@
+*settings_local.py
+*.pyc
+dev_run_pepper.sh
+test_*
+work_in_progress
+

@@ -1,0 +1,4 @@
+import pepper_plugins
+WUNDERGROUND_TOKEN = ""
+SLACKBOT_API_TOKEN = ""
+SLACKBOT_PLUGINS = pepper_plugins.LIST_OF_PLUGINS
