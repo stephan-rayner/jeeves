@@ -10,6 +10,7 @@ regex = re.compile(ur'\bweather\b', re.MULTILINE | re.IGNORECASE)
 
 @respond_to(regex)
 def weather(message):
+	print("DOING STUFF?!?!?!")
 	wunderground_token = slackbot_settings.WUNDERGROUND_TOKEN
 	forecast_url = 'http://api.wunderground.com/api/' + wunderground_token + '/forecast/q/'
 
@@ -36,6 +37,7 @@ def weather(message):
 
 	parsed_json = json.loads(json_string)
 	#print parsed_json
+	print("JSON STRING", json_string)
 	forecastday = parsed_json['forecast']['txt_forecast']['forecastday']
 	response = ""
 	for i,forecast in enumerate(forecastday):

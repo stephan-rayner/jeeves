@@ -24,6 +24,10 @@ def love(message):
 def help(message):
         # Message is replied to the sender (prefixed with @user)
         message.reply('Yes, I can!')
-
     # Message is sent on the channel
     # message.send('I can help everybody!')
+
+hello_regex = re.compile(ur"\bhello\b", re.IGNORECASE)
+@listen_to(hello_regex)
+def hello_send(message):
+    message.send('Hello!')

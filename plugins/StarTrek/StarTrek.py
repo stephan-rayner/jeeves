@@ -1,10 +1,8 @@
-# from slackbot.bot import respond_to
-from images import startrek
+import images as startrek
 from slackbot.bot import listen_to
 from random import random
 from random import randint
 import re
-import unirest
 
 teaRegex = re.compile(ur'\btea\b', re.MULTILINE | re.IGNORECASE)
 @listen_to(teaRegex)
@@ -25,3 +23,4 @@ captainLogRegex = re.compile(ur'\bcaptain\b|\blog\b', re.IGNORECASE)
 def captain_log(message):
 	image = startrek.log[randint(0, len(startrek.log) - 1)]
 	message.send(image)
+

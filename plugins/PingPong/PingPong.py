@@ -6,4 +6,4 @@ regex = re.compile(ur'\bping\b', re.MULTILINE | re.IGNORECASE)
 
 @respond_to(regex)
 def ping(message):
-	message.reply('PONG')
+    message.reply('PONG')
