@@ -6,7 +6,7 @@ import urllib2
 import json
 import re
 
-regex = re.compile(ur'\bweather\b', re.MULTILINE | re.IGNORECASE)
+regex = re.compile(r'\bweather\b', re.MULTILINE | re.IGNORECASE)
 
 @respond_to(regex)
 def weather(message):

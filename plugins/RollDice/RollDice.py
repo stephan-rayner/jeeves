@@ -2,7 +2,7 @@ from slackbot.bot import respond_to
 import re
 from random import randint
 
-@respond_to('roll', re.IGNORECASE)
+@respond_to('$roll', re.IGNORECASE)
 def roll(message):
 	summation = 0
 	try:
@@ -15,13 +15,13 @@ def roll(message):
 			message.reply('`I am not rolling this thing more than 12 times.`')
 			return
 		else:
-			for index in xrange(numberToRoll):
+			for index in range(numberToRoll):
 				number = randint(1, dieToRoll)
 				summation = summation + number
 				message.send("Roll %d:  %d" % (index+1, number))
 			message.send("Sum:  %d" % summation)
 			message.send("Sum + modifier:  %d" % (summation + modifier))
-	except Exception, e:
+	except Exception as e:
 		message.reply(tryAgainMessage())
 		return
 def extractTerms(text):

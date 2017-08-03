@@ -2,7 +2,7 @@ from slackbot.bot import respond_to
 from slackbot.bot import listen_to
 import re
 
-hiRegex = re.compile(ur'\bhi\b', re.IGNORECASE)
+hiRegex = re.compile(r'\bhi\b', re.IGNORECASE)
 @respond_to(hiRegex)
 def hi(message):
         message.reply('I can understand hi or HI!')
@@ -27,7 +27,7 @@ def help(message):
     # Message is sent on the channel
     # message.send('I can help everybody!')
 
-hello_regex = re.compile(ur"\bhello\b", re.IGNORECASE)
+hello_regex = re.compile(r"\bhello\b", re.IGNORECASE)
 @listen_to(hello_regex)
 def hello_send(message):
     message.send('Hello!')
