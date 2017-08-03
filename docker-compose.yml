@@ -4,4 +4,4 @@ services:
   jeeves:
     build: .
     volumes:
-     - ./:/code
+     - "./:/code"
