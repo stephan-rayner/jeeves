@@ -11,4 +11,5 @@ This is mildly irrelevant. See Below.
 
 - Bad API Token
 - Uses urllib2 from py2
+- Needs to be switched to be py3 compatible
 
