@@ -1,4 +1,5 @@
 from slackbot.bot import respond_to
+from slackbot.bot import listen_to
 import re
 import shelve
 import logging
@@ -8,6 +9,7 @@ data = "./data/groceries.data"
 # get_regex = re.compile(r'^groceries: \bget\b|\blist\b', re.MULTILINE | re.IGNORECASE)
 get_regex = re.compile(r"\bgroceries.list\b", re.IGNORECASE)
 @respond_to(get_regex)
+@listen_to(get_regex)
 def get_list(message):
     db = shelve.open(data)
     try:
@@ -25,6 +27,7 @@ def get_list(message):
 
 add_regex = re.compile(r'\bgroceries.add\b', re.MULTILINE | re.IGNORECASE)
 @respond_to(add_regex)
+@listen_to(add_regex)
 def add_items(message):
     l = message.body["text"].lower().split("groceries.add")[1].replace(", ", ",").strip()
     items = l.split(",")
@@ -47,6 +50,7 @@ def add_items(message):
 
 remove_regex = re.compile(r"\bgroceries.remove\b", re.MULTILINE | re.IGNORECASE)
 @respond_to(remove_regex)
+@listen_to(remove_regex)
 def remove_items(message):
     l = message.body["text"].lower().split("groceries.remove")[1].replace(", ", ",").strip()
     items = l.split(",")
@@ -61,6 +65,7 @@ def remove_items(message):
 
 clear_regex = re.compile(r"\bgroceries.clear\b", re.IGNORECASE)
 @respond_to(clear_regex)
+@listen_to(clear_regex)
 def clear(message):
     db = shelve.open(data)
     try:
