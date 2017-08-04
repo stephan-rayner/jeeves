@@ -5,8 +5,8 @@ import logging
 
 data = "./data/groceries.data"
 
-# get_regex = re.compile(ur'^groceries: \bget\b|\blist\b', re.MULTILINE | re.IGNORECASE)
-get_regex = re.compile(ur"\bgroceries.list\b", re.IGNORECASE)
+# get_regex = re.compile(r'^groceries: \bget\b|\blist\b', re.MULTILINE | re.IGNORECASE)
+get_regex = re.compile(r"\bgroceries.list\b", re.IGNORECASE)
 @respond_to(get_regex)
 def get_list(message):
     db = shelve.open(data)
@@ -23,7 +23,7 @@ def get_list(message):
     finally:
         db.close()
 
-add_regex = re.compile(ur'\bgroceries.add\b', re.MULTILINE | re.IGNORECASE)
+add_regex = re.compile(r'\bgroceries.add\b', re.MULTILINE | re.IGNORECASE)
 @respond_to(add_regex)
 def add_items(message):
     l = message.body["text"].lower().split("groceries.add")[1].replace(", ", ",").strip()
@@ -45,7 +45,7 @@ def add_items(message):
     finally:
         db.close()
 
-remove_regex = re.compile(ur"\bgroceries.remove\b", re.MULTILINE | re.IGNORECASE)
+remove_regex = re.compile(r"\bgroceries.remove\b", re.MULTILINE | re.IGNORECASE)
 @respond_to(remove_regex)
 def remove_items(message):
     l = message.body["text"].lower().split("groceries.remove")[1].replace(", ", ",").strip()
@@ -59,7 +59,7 @@ def remove_items(message):
     finally:
         db.close()
 
-clear_regex = re.compile(ur"\bgroceries.clear\b", re.IGNORECASE)
+clear_regex = re.compile(r"\bgroceries.clear\b", re.IGNORECASE)
 @respond_to(clear_regex)
 def clear(message):
     db = shelve.open(data)
