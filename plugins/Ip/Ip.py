@@ -3,7 +3,7 @@ from slackbot.bot import listen_to
 import socket
 import re
 
-regex = re.compile(ur'\bWhat is your ip?\b', re.MULTILINE | re.IGNORECASE)
+regex = re.compile(r'\bWhat is your ip?\b', re.MULTILINE | re.IGNORECASE)
 
 @respond_to(regex)
 def ping(message):

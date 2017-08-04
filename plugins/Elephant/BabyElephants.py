@@ -1,6 +1,5 @@
 from slackbot.bot import respond_to
 from utils.RandomRedditRetriever import RandomRedditRetriever
-from random import random
 import re
 
 @respond_to('elephant me', re.IGNORECASE)
