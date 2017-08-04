@@ -1,5 +1,6 @@
 ### Project Specific ###
 *settings_local.py
+*.data
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

@@ -4,5 +4,6 @@ LIST_OF_PLUGINS = [
 "plugins.StarTrek",
 "plugins.Conversation",
 "plugins.PingPong",
-"plugins.Elephant"
+"plugins.Elephant",
+"plugins.Groceries"
 ]
