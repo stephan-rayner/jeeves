@@ -41,7 +41,7 @@ def add_items(message):
                 quantity = int(item_quantity[1])
 
             # FIXME: I feel str casting from unicode is dumb moving to py3 should fix this as strings are utf-8 as default
-            db[str(item)] = quantity
+            db[item] = quantity
     finally:
         db.close()
 
@@ -54,8 +54,8 @@ def remove_items(message):
     db = shelve.open(data)
     try:
         for item in items:
-            if str(item) in db:
-                del db[str(item)]
+            if item in db:
+                del db[item]
     finally:
         db.close()
 
