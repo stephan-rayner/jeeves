@@ -2,6 +2,8 @@ from slackbot.bot import listen_to
 from random import random
 from random import randint
 import re
+
+# WTF: https://stackoverflow.com/questions/42263962
 from . import images
 
 teaRegex = re.compile(r'\btea\b', re.MULTILINE | re.IGNORECASE)
