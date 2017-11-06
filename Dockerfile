@@ -1,7 +1,7 @@
 FROM cheesemanor/base-python:latest
-MAINTAINER Stephan Rayner <stephan.rayner@gmail.com>
-LABEL Name=Jeeves
-LABEL Version=0.0.1
+LABEL Author="Stephan Rayner <stephan.rayner@gmail.com>"
+LABEL Name="Jeeves"
+LABEL Version="0.0.1"
 ADD . /code
 
 WORKDIR /code
