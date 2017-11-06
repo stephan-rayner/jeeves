@@ -1,5 +1,4 @@
-# import unirest
-import urllib.request # Python 3
+import urllib.request
 import json
 import requests
 from random import random
