@@ -2,8 +2,11 @@ from slackbot.bot import respond_to
 import re
 from random import randint
 
-@respond_to('$roll', re.IGNORECASE)
-def roll(message):
+ROLL_REGEX =  re.compile(r"(roll [0-9]+d[0-9]+)", re.IGNORECASE)
+
+@respond_to(ROLL_REGEX)
+def roll(message, args=None):
+	# message.reply("CHEESE BITCHES")
 	summation = 0
 	try:
 		unpackedMessage = message.body['text'].lower().split("roll ")[1].split(" ")
@@ -24,6 +27,8 @@ def roll(message):
 	except Exception as e:
 		message.reply(tryAgainMessage())
 		return
+
+
 def extractTerms(text):
 	'''This is where the heavy thinking happens'''
 	if('+' in text):
@@ -34,14 +39,17 @@ def extractTerms(text):
 		modifier = 0
 	return int(numberToRoll), int(dieToRoll), int(modifier)
 
+
 def tryAgainMessage():
 	option1 = "`roll [numberOfRolls]d[valueOfDie]`"
 	option2 = "`roll [numberOfRolls]d[valueOfDie]+[modifier]`"
 	option3 = "`roll [numberOfRolls]d[valueOfDie] + [modifier]`"
 	return "It should look something like ...\n%s\nor\n%s\nor\n%s" % (option1, option2, option3)
 
+
 def flatten(listOfStrings):
 	returnText = ""
 	for text in listOfStrings:
 		returnText = returnText + text
 	return returnText
+

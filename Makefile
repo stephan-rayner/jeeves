@@ -5,6 +5,9 @@ build:
 run:
 	docker run -d --name Jeeves cheesemanor/jeeves
 
+dev-run:
+	docker run --rm --name Jeeves cheesemanor/jeeves
+
 clean:
 	docker rm Jeeves
 	docker rmi cheesemanor/jeeves
